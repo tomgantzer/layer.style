@@ -1,0 +1,47 @@
+/* ----- Work ----- */
+
+#work {
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  .work-item {
+    width: calc(50% - 40px);
+    flex: 0 1 auto;
+    position: relative;
+    margin: 20px;
+    background: #fff;
+    box-shadow: 0 10px 6px -6px rgba(0,0,0,.15);
+    border: 1px solid rgba(0,0,0,.1);
+    transition: all 0.2s ease-out;
+
+    .work-image {
+      img {
+        height: 33.3vw;
+      }
+      video {
+        height: 33.3vw;
+      }
+    }
+
+    .work-image-gallery {
+      display: none;
+
+      img {
+        max-height: 10vw;
+        max-width: 10vw;
+      }
+    }
+
+    .work-information {
+      padding: 20px;
+
+      h3 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

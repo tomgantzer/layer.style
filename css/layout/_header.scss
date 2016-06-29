@@ -1,0 +1,127 @@
+/* ----- Header ----- */
+
+header {
+  font-family: "Raleway Light", sans-serif;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  padding: 0 20px;
+  background-color: white;
+  box-shadow: 0 10px 6px -6px rgba(0,0,0,0.05);
+  z-index: 3;
+
+  &.header-small {
+    height: 4vh;
+    min-height: 60px;
+    overflow: hidden;
+    transition: .25s all ease-in-out;
+  }
+
+  a {
+    padding: 0 10px;
+    transition: all .15s ease-in-out;
+
+    &:hover {
+      padding: 10px;
+      overflow: hidden;
+    }
+  }
+
+  .header-nav {
+    flex: 2 0 0;
+    justify-content: flex-end;
+    text-align: right;
+
+    ul {
+      border-left: none;
+
+      li {
+        display: inline;
+      }
+    }
+
+    input {
+      display: none;
+      width: 36px;
+      height: 36px;
+      background: #555;
+      color: #fff;
+      text-align: center;
+      line-height: 36px;
+      font-size: 1.6rem;
+      border-radius: 4px;
+    }
+
+    label {
+      @extend input;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      transition: .4s;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:before {
+        font-family: FontAwesome;
+        font-size: 24px;
+        content: "\f0c9";
+        text-align: center;
+      }
+    }
+  }
+
+  .header-logo {
+    display: flex;
+    flex: 1 0 0;
+    align-items: baseline;
+
+    svg {
+      display: inline-block;
+      min-width: 160px;
+
+      path {
+        stroke: #000;
+        stroke-width: 0;
+        stroke-linecap: "round";
+        stroke-dasharray: 0, 0;
+      }
+    }
+  }
+}
+
+/* ----- Media Queries ----- */
+
+@media only screen and (max-width: 450px) {
+  header {
+    .header-logo {
+      ul {
+        display: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+      }
+
+      li {
+        flex: none;
+        width: 100%;
+        border-bottom: solid 1px #777;
+      }
+
+      input[type="checkbox"]:checked + ul {
+        display: block;
+        width: 100%;
+        background: #999;
+
+        li:nth-child(1) {
+          background: #777;
+          color: #fff;
+        }
+      }
+
+      label {
+        display: block;
+      }
+    }
+  }
+}
