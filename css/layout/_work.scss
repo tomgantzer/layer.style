@@ -7,8 +7,9 @@
   justify-content: flex-start;
 
   .work-item {
+    flex: 1 1 auto;
     width: calc(50% - 40px);
-    flex: 0 1 auto;
+    min-width: 400px;
     position: relative;
     margin: 20px;
     background: #fff;
@@ -16,21 +17,19 @@
     border: 1px solid rgba(0,0,0,.1);
     transition: all 0.2s ease-out;
 
-    .work-image {
-      img {
-        height: 33.3vw;
-      }
-      video {
-        height: 33.3vw;
-      }
-    }
-
     .work-image-gallery {
-      display: none;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
 
       img {
-        max-height: 10vw;
-        max-width: 10vw;
+        cursor: hand;
+        margin: 10px;
+        flex: 0 1 auto;
+        width: calc(25% - 20px);
+        min-width: 80px;
+        height: 80px;
       }
     }
 

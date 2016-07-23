@@ -3,7 +3,6 @@
 @import 'base/elements';
 @import 'vendor/plyr';
 @import 'layout/header';
-@import 'layout/footer';
 @import 'layout/blog';
 @import 'layout/work';
 
@@ -21,7 +20,7 @@
   width: 100vw;
   max-width: 100%;
   text-align: center;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   background-size: cover;
   background-position: center center;
   transition: background-color 2s ease-out;

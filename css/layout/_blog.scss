@@ -1,5 +1,7 @@
 /* ----- Blog ----- */
 
+$margin: 2vh;
+
 #blog {
   & > ul,
   & > ol {
@@ -7,36 +9,57 @@
   }
 
   li {
+    line-height: 34px;
+    position: relative;
+    left: -6px;
     padding-left: 20px;
-    border: 0;
-    border-left: 6px;
-    border-image: linear-gradient(to left top, rgba(46,204,113,1), rgba(46,204,113,1)) 1 repeat;
+
+    &::before {
+      content: "";
+      background: rgba(46,204,113,1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 6px;
+    }
   }
 
   ul {
+    margin-top: $margin;
     list-style-type: none;
-    border-left: solid 6px rgba(46,204,113,.15);
+    border-left: solid 6px rgba(46,204,113,.25);
 
     li {
-      margin-left: -46px;
 
       &:not(:last-child) {
-        margin-bottom: 10px;
+        margin-bottom: $margin;
       }
     }
   }
 
   ol {
+    @extend ul;
     list-style: decimal inside;
-    border-left: solid 6px rgba(46,204,113,.15);
+  }
 
-    li {
-      margin-left: -46px;
+  p {
+    margin-top: $margin;
+  }
 
-      &:not(:last-child) {
-        margin-bottom: 10px;
-      }
+  h2 {
+    margin-top: $margin;
+  }
+
+  blockquote {
+
+    p {
+      margin-top: 0;
     }
+  }
+
+  img {
+    margin-top: $margin;
   }
 
   .blog-post {
@@ -53,11 +76,12 @@
     min-width: 360px;
     max-width: 960px;
     text-align: left;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 40px;
   }
 
   .blog-banner-img {
+    margin-top: 0;
     width: 100%;
     height: 55vw;
     max-height: 75vh;
@@ -74,20 +98,22 @@
 
   .blog-title {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 
     h1 {
       letter-spacing: 1px;
       display: flex;
       flex: 5 0 0;
+      margin: 0;
     }
   }
 
   .blog-category {
+    margin-top: 6px;
     justify-content: flex-end;
-    flex: 1 0 1;
-    vertical-align: top;
+    align-items: flex-end;
+    flex: 0 1 auto;
     color: white;
     font-weight: 600;
     background-color: #2ecc71;

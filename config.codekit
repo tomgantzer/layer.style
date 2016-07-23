@@ -141,17 +141,6 @@
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
-	"\/lib\/anime.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/anime.js",
-		"outputAbbreviatedPath": "\/lib\/anime-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 1
-		},
 	"\/lib\/handlebars.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -218,12 +207,12 @@
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
-	"\/lib\/unveil.js": {
+	"\/lib\/velocity.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/unveil.js",
-		"outputAbbreviatedPath": "\/lib\/unveil-min.js",
+		"inputAbbreviatedPath": "\/lib\/velocity.js",
+		"outputAbbreviatedPath": "\/lib\/velocity-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
@@ -283,25 +272,25 @@
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/lib\/anime.js",
+			"linkedFileAbbreviatedPath": "\/lib\/velocity.js",
 			"position": 1,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/lib\/handlebars.js",
+			"linkedFileAbbreviatedPath": "\/lib\/prism.js",
 			"position": 2,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/lib\/moment.js",
+			"linkedFileAbbreviatedPath": "\/lib\/handlebars.js",
 			"position": 3,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/lib\/unveil.js",
+			"linkedFileAbbreviatedPath": "\/lib\/moment.js",
 			"position": 4,
 			"type": 0
 			},
@@ -313,14 +302,8 @@
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/lib\/prism.js",
-			"position": 6,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/lib\/plyr.js",
-			"position": 7,
+			"position": 6,
 			"type": 0
 			}
 		]

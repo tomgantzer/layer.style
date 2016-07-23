@@ -1,31 +1,29 @@
 var colors = [
-  'rgb(241, 196, 15)',
-  'rgb(39, 174, 96)',
-  'rgb(52, 152, 219)',
-  'rgb(155, 89, 182)',
-  'rgb(236, 240, 241)',
-  'rgb(231, 76, 60)',
-  'rgb(243, 156, 18)',
-  'rgb(127, 140, 141)'
+  '#1abc9c',
+  '#3498db',
+  '#f39c12',
+  '#9b59b6',
+  '#c0392b',
+  '#95a5a6',
+  '#ecf0f1',
+  '#2ecc71'
 ];
 
 $(document).ready(function() {
-  /* ----- stuff that makes me look smart ----- */
   var experienceYears = moment().diff('2013-06-23', 'years');
   $("#me-experience h3 span").html(experienceYears + " years");
 
   /* ----- work ----- */
-  $.getJSON( "cache/work.json", function(workData) {
+  $.getJSON( "cache/cms-work.json", function(workData) {
     console.log("Work data returned!");
     var workSource = $("#portfolio").html();
     var workTemplate = Handlebars.compile(workSource);
 
     $("#work").append(workTemplate(workData)); //append all raw data to work section
-    // hide all images, until the user scrolls to them
-    $("img").unveil(120, function() {
-      $(this).load(function() {
-      this.style.opacity = 1;
-      });
+
+    $(".work-image-gallery img").click(function() {
+      var target = $(this).attr("src");
+      $(this).parent().siblings(".work-image").children("img").attr("src", target);
     });
 
     plyr.setup();
@@ -35,7 +33,7 @@ $(document).ready(function() {
   });
 
   /* ----- blog ----- */
-  $.getJSON( "cache/blogs.json", function(blogData) {
+  $.getJSON( "cache/cms-blogs.json", function(blogData) {
     console.log("Blog data returned!");
     var blogSource = $("#post").html();
     var blogTemplate = Handlebars.compile(blogSource);
@@ -54,7 +52,7 @@ $(document).ready(function() {
 
     $(".blog-time").each(function() {
       var time = $(this).html();
-      time = moment(time).format("Do MMM YYYY, HH:mm");
+      time = moment(time).format("Do MMM YYYY");
       $(this).html(time);
     });
 
@@ -64,15 +62,17 @@ $(document).ready(function() {
       $(this).siblings(".more-text").slideToggle();
     });
 
-    // hide all images, until the user scrolls to them
-    $("img").unveil(50, function() {
-      $(this).load(function() {
-        this.style.opacity = 1;
-      });
-    });
+    // $("ul li ul").each(function () {
+    //   var parentHeight = $(this).parent("li").height();
+    //   var childHeight = $(this).height();
+    //   var newHeight = (parseInt(childHeight) / parseInt(parentHeight)) * 100;
+    //
+    //   $(this).parent("li:before").css('height', newHeight + '%');
+    //   $(this).parent.addClass("WORKING");
+    // });
   });
 
-  animateGradient(); // when everything else is golden, start the gradient animation loop.
+  animateGradient();
 });
 
 /* ----- smooth scroll on anchor click ----- */
