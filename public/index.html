@@ -114,7 +114,7 @@
 			<p> and I specialise in visual design, interactive prototyping &amp; front-end development.</p>
 		</div>
 		<div id="me-experience" class="me-slab">
-			<h3>I've been working for <span>many years</span></h3>
+			<h3>I've been working for <span>4</span> years</h3>
 			<p>in industries such as IoT, broadcast, elderly care, medical &amp; consumer products.</p>
 		</div>
 		<div id="me-writing" class="me-slab">
@@ -124,12 +124,10 @@
 	</section><!-- end of about me -->
 
 	<h2>Work</h2>
-
 	<section id="work">
 	</section><!-- end of work -->
 
 	<h2>Blog</h2>
-
 	<section id="blog">
 	</section><!-- end of blog -->
 
@@ -141,7 +139,6 @@
 				<div class="blog-text">
 					<div class="blog-title">
 						<h1>{{this.title}}</h1>
-						<div class="blog-category">{{this.category}}</div>
 					</div>
 					<div class="blog-information">
 						<time class="blog-time">{{this.date}}</time>
@@ -160,20 +157,20 @@
 					<h3>{{this.title}}</h3>
 					{{{this.post}}}
 				</div>
-				<div class="work-image">
-					{{#if this.video}}
-						<div data-type="youtube" data-video-id="{{this.video}}"></div>
-					{{else}}
-						<img src="cms/content/work/{{this.uid}}/{{this.banner_image}}" alt="{{this.title}}"/>
-					{{/if}}
-				</div>
-				{{#if this.files.[0]}}
-					<div class="work-image-gallery">
-						{{#each files}}
-							<img src="cms/content/{{this.relative}}" alt="{{this.name}}"/>
+				<div class="work-gallery">
+					{{#if this.youtube}}
+						{{#each (split this.youtube)}}
+							<div class="work-image-gallery" data-src="{{this}}" >
+								<img src="http://img.youtube.com/vi/{{youtubeID this}}/maxresdefault.jpg">
+							</div>
 						{{/each}}
-					</div>
-				{{/if}}
+					{{/if}}
+					{{#each files}}
+						<div class="work-image-gallery" data-src="cms/content/{{this.dir}}/{{this.name}}.{{this.extension}}">
+							<img src="cms/thumbs/{{this.dir}}/{{this.name}}-75x75.{{this.extension}}" alt="{{../this.title}}">
+						</div>
+					{{/each}}
+				</div>
 			</div>
 		{{/each}}
 	</script>

@@ -19,6 +19,7 @@ header {
   }
 
   a {
+    font-size: 18px;
     padding: 0 10px;
     transition: all .15s ease-in-out;
 
@@ -80,7 +81,7 @@ header {
 
     svg {
       display: inline-block;
-      min-width: 160px;
+      width: 120px;
 
       path {
         stroke: #000;

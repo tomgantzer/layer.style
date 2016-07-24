@@ -73,7 +73,6 @@ $margin: 2vh;
   .blog-text {
     position: relative;
     width: 100%;
-    min-width: 360px;
     max-width: 960px;
     text-align: left;
     margin: 0 auto;
@@ -102,22 +101,9 @@ $margin: 2vh;
     width: 100%;
 
     h1 {
-      letter-spacing: 1px;
-      display: flex;
-      flex: 5 0 0;
+      font-size: 175%;
       margin: 0;
     }
-  }
-
-  .blog-category {
-    margin-top: 6px;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex: 0 1 auto;
-    color: white;
-    font-weight: 600;
-    background-color: #2ecc71;
-    padding: 12px 20px;
   }
 
   .more-text {

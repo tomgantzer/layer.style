@@ -1,3 +1,13 @@
+// Handlebars Helpers
+Handlebars.registerHelper('split', function(url) {
+  var array = url.split(",");
+  return array;
+});
+
+Handlebars.registerHelper('youtubeID', function(url) {
+  return url.split("=")[1].split("&");
+});
+
 var colors = [
   '#1abc9c',
   '#3498db',
@@ -10,23 +20,23 @@ var colors = [
 ];
 
 $(document).ready(function() {
-  var experienceYears = moment().diff('2013-06-23', 'years');
-  $("#me-experience h3 span").html(experienceYears + " years");
-
   /* ----- work ----- */
   $.getJSON( "cache/cms-work.json", function(workData) {
     console.log("Work data returned!");
+
     var workSource = $("#portfolio").html();
     var workTemplate = Handlebars.compile(workSource);
 
     $("#work").append(workTemplate(workData)); //append all raw data to work section
 
-    $(".work-image-gallery img").click(function() {
-      var target = $(this).attr("src");
-      $(this).parent().siblings(".work-image").children("img").attr("src", target);
+    $(".work-item").each(function(i, element) {
+      $(element).lightGallery({
+        loadYoutubeThumbnail: true,
+        youtubeThumbSize: 'default',
+        selector: '.work-image-gallery',
+        galleryId: i
+      });
     });
-
-    plyr.setup();
 
   }).error(function(err, response) {
     console.log("blog error: " + response, err);
